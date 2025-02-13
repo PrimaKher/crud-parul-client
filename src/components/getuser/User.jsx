@@ -3,6 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+const baseurl="https://crud-parul-server.onrender.com";
 
 const User = () => {
   const [users, setUsers] = useState([]);
@@ -20,7 +21,7 @@ const User = () => {
 
       try {
         // Fetch user data with Authorization header
-        const response = await axios.get("http://localhost:8000/api/getall", {
+        const response = await axios.get(`${baseurl}/api/getall`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -54,7 +55,7 @@ const User = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:8000/api/delete/${userId}`, {
+      await axios.delete(`${baseurl}/api/delete/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
