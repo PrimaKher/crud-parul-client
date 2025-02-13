@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api";
+const API_URL = "https://crud-parul-server.onrender.com";
 
 export const register = async (userData) => {
   return await axios.post(`${API_URL}/register`, userData);
